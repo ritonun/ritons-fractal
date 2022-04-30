@@ -1,4 +1,11 @@
-import settings
+from parameters import Config
+
+
+def main():
+    pass
+
 
 if __name__ == "__main__":
-    print(settings.WIDTH)
+    config = Config()
+    config.write_default_settings()
+    main()

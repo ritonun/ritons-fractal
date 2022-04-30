@@ -1,8 +1,10 @@
 ''' --- SETTINGS --- '''
-from config import config
+from parameters import Config
 
 
 def get_int_value(section, key):
+    conf = Config()
+    config = conf.read_settings()
     value = config[section][key]
     value = int(value)
     return value
