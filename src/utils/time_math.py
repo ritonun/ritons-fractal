@@ -29,3 +29,5 @@ class TimeMath:
 
         if reset:
             self.start_running_time()
+
+        return end_time

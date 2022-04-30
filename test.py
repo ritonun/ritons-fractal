@@ -10,11 +10,15 @@ def test_loading_msg():
 
 
 def test_runtime():
+    sleep_time = 5
     myTime = src.utils.TimeMath()
     time.sleep(5)
-    myTime.show_running_time()
-    print("result should be 5 sec")
+    runtime = myTime.show_running_time()
+    if runtime > sleep_time and runtime < sleep_time + 1:
+        print("Test runtime: OK!")
+    else:
+        print("Error: test runtime")
 
 
 # test_loading_msg()
-# test_runtime()
+test_runtime()
