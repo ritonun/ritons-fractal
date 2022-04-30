@@ -18,3 +18,8 @@ https://realpython.com/python-testing/
 *research google:*  
 profile code  
 optimisze pillow image  
+
+# Docs
+* TimeMath()  -> when init it start a timer
+start_running_time() -> reset timer  
+show_running_time(reset=False) -> show time of execution, if reset it reset the timer
