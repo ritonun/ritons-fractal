@@ -20,6 +20,22 @@ profile code
 optimisze pillow image  
 
 # Docs
-* TimeMath()  -> when init it start a timer
+
+### Src
+
+### Utils
+Package that contains useful small class.  
+
+* TimeMath()  -> when init it start a timer  
+Class to print to screen the time of execution of a program  
 start_running_time() -> reset timer  
-show_running_time(reset=False) -> show time of execution, if reset it reset the timer
+show_running_time(reset=False) -> show time of execution, if reset it reset the timer  
+
+* Loading() 
+Class to print to user loading msg in % during a task  
+show_loading_msg(current_value, max_value)  
+    Convert a value into a % to show user advancement every x time  
+    current_value: current iteration in the for loop  
+    max_value:  max value possible for the iteration  
+
+
