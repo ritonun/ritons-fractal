@@ -5,7 +5,7 @@ class TimeMath:
     def __init__(self):
         self.start_time = time.time()
 
-    def convert_seconds_into_time(time):
+    def convert_seconds_into_time(self, time):
         seconds = 0 
         minutes = 0
         hours = 0
