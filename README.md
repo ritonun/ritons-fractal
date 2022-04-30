@@ -13,6 +13,8 @@ https://docs.python-guide.org/writing/structure/
 https://www.codingame.com/playgrounds/2358/how-to-plot-the-mandelbrot-set/adding-some-colors  
 *math:*  
 https://www.youtube.com/watch?v=NGMRB4O922I  
+*unit test:*  
+https://realpython.com/python-testing/  
 *research google:*  
 profile code  
 optimisze pillow image  
