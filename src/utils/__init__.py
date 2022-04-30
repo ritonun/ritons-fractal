@@ -1,2 +1,2 @@
-from time_math import TimeMath
-from loading import Loading
+from .loading import Loading
+from .time_math import TimeMath
