@@ -13,6 +13,10 @@ Documentation is build with MKdocs. All the `.mk` file are in the `docs/` folder
 - [ ] small animation / zoom incorporation in main.py
 
 # Features to come (maybe)
+- counter on wich iteration we are of the anime, so we can pause it, kill the program and when prgm restarted, continue generate image from the iteration count (useful for very long processing of image)
+- script to create gif incorporated into appli
+- custom output path variable in settings
+- viewer (with pygame?) for coordinate, zoom
 - optimisation
 - logging (instead of debuggin with print)
 - executables
