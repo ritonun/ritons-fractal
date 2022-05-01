@@ -25,7 +25,7 @@ class TimeMath:
         # Print running time
         end_time = time.time() - self.start_time
         h, m, s = self.convert_seconds_into_time(end_time)
-        print("--- Time of running: {}h {}min {}sec".format(h, m, s))
+        print("Time of running: {}h {}min {}sec".format(h, m, s))
 
         if reset:
             self.start_running_time()

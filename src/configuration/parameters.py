@@ -36,12 +36,13 @@ class Config:
         config.read(path)
         return config
 
-    def modify_settings(self, section, data, number):  # noqa: E501
+    def modify_settings(self, section, data, number, show_succes=False):  # noqa: E501
         config = configparser.ConfigParser()
         config.read(self.filepath)
         config.set(section, data, str(number))
         with open(self.filepath, "w") as configfile:
             config.write(configfile)
-        print("--- Config file written successfully ({}) ---".format(
-            self.filepath))
+        if show_succes:
+            print("--- Config file written successfully ({}) ---".format(
+                  self.filepath))
         self.config = config

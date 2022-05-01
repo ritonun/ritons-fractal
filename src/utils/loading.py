@@ -38,4 +38,4 @@ class Loading:
             if self.pourcentage not in self.pourcentage_showed:
                 self.last_showing_msg = time.time()
                 self.pourcentage_showed.append(self.pourcentage)
-                print("--- Loading {}% ---".format(self.pourcentage))
+                print("Loading {}%".format(self.pourcentage))
