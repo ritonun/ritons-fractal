@@ -1,5 +1,5 @@
 ''' --- SETTINGS --- '''
-from parameters import Config
+from .parameters import Config
 
 
 def get_int_value(section, key):

@@ -1,4 +1,4 @@
-from parameters import Config
+from configuration import WIDTH, HEIGHT, RE_START, RE_END, IM_START, IM_END
 
 
 def main():
@@ -6,6 +6,4 @@ def main():
 
 
 if __name__ == "__main__":
-    config = Config()
-    config.write_default_settings()
     main()
