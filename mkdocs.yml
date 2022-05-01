@@ -3,10 +3,10 @@ site_url: https://example.com/
 nav:
   - Home: index.md
   - API:
-    - Utils package: utils.md
-    - Config & settings: parameters.md
+    - Utils package: api/utils.md
+    - Config & settings: api/parameters.md
   - Tutorial:
-    - Tuto: ' '
+    - Tutorial: tutorial/turorial.md
   - About: 
     - License: about/license.md
     - About: about/about.md
