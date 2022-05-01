@@ -4,14 +4,23 @@ Fractal App is an simple app to view and play with 2d fractal, as of now only th
 It is plan in the future to make it able to generate animation.  
 [Link to main repo](https://github.com/ritonun/ritons-fractal)
 
-# Features to come
+# Docs
+Documentation is build with MKdocs. All the `.mk` file are in the `docs/` folder. You can view them nicely by placing yourself in the project folder and entering the command `mkdocs serve`. Then enter in your browser the custom adress showed (something like `http://127.0.0.1:8000`). If you prefer, you can build the site instead of creating a server with the command `mkdocs build`. In the `site/` it will create, open `index.html`.  
+
+# Work in progress
+- [ ] OOP Image calculation
+- [ ] mandelbrot math
+- [ ] pygame image viewer OOP
+- [ ] small aniation / zoom incorporation n main.py
+
+# Features to come (maybe)
 - optimisation
 - logging (instead of debuggin with print)
 - executables
 - test units (proper one with a library)
-- documentation (with sphinx)
+- documentation (with mkdocs)
 
-# Links
+# Dev links
 *documentation:*  
 https://docs.readthedocs.io/en/latest/intro/import-guide.html  
 *project structure:*  
@@ -25,24 +34,3 @@ https://realpython.com/python-testing/
 *research google:*  
 profile code  
 optimisze pillow image  
-
-# Docs
-
-### Src
-
-### Utils
-Package that contains useful small class.  
-
-* TimeMath()  -> when init it start a timer  
-Class to print to screen the time of execution of a program  
-start_running_time() -> reset timer  
-show_running_time(reset=False) -> show time of execution, if reset it reset the timer  
-
-* Loading() 
-Class to print to user loading msg in % during a task  
-show_loading_msg(current_value, max_value)  
-    Convert a value into a % to show user advancement every x time  
-    current_value: current iteration in the for loop  
-    max_value:  max value possible for the iteration  
-
-
