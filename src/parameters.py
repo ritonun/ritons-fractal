@@ -42,5 +42,6 @@ class Config:
         config.set(section, data, str(number))
         with open(self.filepath, "w") as configfile:
             config.write(configfile)
-        print("--- Config file written successfully ({}) ---".format(self.filepath))
+        print("--- Config file written successfully ({}) ---".format(
+            self.filepath))
         self.config = config

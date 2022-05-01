@@ -1,13 +1,15 @@
 Utils package
 ==========
 
-# loading.py
-###### Loading.show_loading_msg(current_value, max_value)
+# class Loading
+## Loading.show_loading_msg(current_value, max_value)
 *int* current_value: current value of the iteration  
 *int* max_value: value reach at the end of iteration  
-Transform value into a pourcentage of advancements and print to user every 3 seconds  
+Take a value and transform in into a pourcentage. Every 3 seconds, if pourcentage has advanced, it display a msg to the user until the task is done.  
 
-# time_math.py
-###### TimeMath.show_running_time(reset=False)
+# class TimeMath
+## TimeMath.start_running_time()
+Reeset internal timer.  
+## TimeMath.show_running_time(reset=False)
 *bool* reset: force timer to reset  
-Print to user execution time of programm (or between a reset and the call)  
+Print to user running time between reset and call of the fuction.  

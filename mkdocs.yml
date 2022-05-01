@@ -3,5 +3,6 @@ site_url: https://example.com/
 nav:
   - Home: index.md
   - Utils package: utils.md
+  - Config & settings: parameters.md
   - About: about.md
 theme: readthedocs
