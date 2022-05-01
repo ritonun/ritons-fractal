@@ -1,8 +1,13 @@
-from configuration import WIDTH, HEIGHT, RE_START, RE_END, IM_START, IM_END
+from configuration import config
+from utils import time_math
+from image import render_image
 
 
 def main():
-    pass
+    time_math.start_running_time()
+    im = render_image()
+    time_math.show_running_time()
+    im.show()
 
 
 if __name__ == "__main__":
