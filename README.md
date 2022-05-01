@@ -1,7 +1,6 @@
 Fractal App (2D)
 ===========================================
-Fractal App is an simple app to view and play with 2d fractal, as of now only the mandelbrot set. It allow user to specify parameters to generate high-quality image.  
-It is plan in the future to make it able to generate animation.  
+Fractal App is a simple app to view and play with 2D fractal, as of now only the mandelbrot set. It allow user to specify parameters to generate high-quality image. It is plan in the future to make it able to generate animation.  
 [Link to main repo](https://github.com/ritonun/ritons-fractal)
 
 # Docs
@@ -11,7 +10,7 @@ Documentation is build with MKdocs. All the `.mk` file are in the `docs/` folder
 - [ ] OOP Image calculation
 - [ ] mandelbrot math
 - [ ] pygame image viewer OOP
-- [ ] small aniation / zoom incorporation n main.py
+- [ ] small animation / zoom incorporation in main.py
 
 # Features to come (maybe)
 - optimisation
