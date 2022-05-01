@@ -7,6 +7,8 @@ It is plan in the future to make it able to generate animation.
 # Features to come
 
 # Links
+*documentation:*  
+https://docs.readthedocs.io/en/latest/intro/import-guide.html  
 *project structure:*  
 https://docs.python-guide.org/writing/structure/  
 *color:*  
