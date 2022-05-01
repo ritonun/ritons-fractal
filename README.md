@@ -5,6 +5,11 @@ It is plan in the future to make it able to generate animation.
 [Link to main repo](https://github.com/ritonun/ritons-fractal)
 
 # Features to come
+- optimisation
+- logging (instead of debuggin with print)
+- executables
+- test units (proper one with a library)
+- documentation (with sphinx)
 
 # Links
 *documentation:*  
