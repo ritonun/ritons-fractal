@@ -1,0 +1,7 @@
+site_name: My Docs
+site_url: https://example.com/
+nav:
+  - Home: index.md
+  - Utils package: utils.md
+  - About: about.md
+theme: readthedocs
