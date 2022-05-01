@@ -1,12 +1,13 @@
 from PIL import Image, ImageDraw
 import configuration.settings as cs
 from fractal_math import mandelbrot
-from utils import loading
+from utils import Loading
 import datetime
 import importlib
 
 
 def render_image(show_loading=True):
+    loading = Loading()
     importlib.reload(cs)
     img = Image.new('RGB', (cs.WIDTH, cs.HEIGHT), (0, 0, 0))
     draw = ImageDraw.Draw(img)
@@ -17,11 +18,11 @@ def render_image(show_loading=True):
             c = complex(cs.RE_START + (x / cs.WIDTH) * (cs.RE_END - cs.RE_START),
                         cs.IM_START + (y / cs.HEIGHT) * (cs.IM_END - cs.IM_START))
             m = mandelbrot(c)
-            color = 255 - int(m * 255 / cs.MAX_ITER)
+            color = int(m * 255 / cs.MAX_ITER)
             draw.point([x, y], (color, color, color))
 
         if show_loading:
-            loading.show_loading_msg(x, cs.WIDTH)
+            loading.show_loading_msg(x, cs.WIDTH, custom_msg="   ")
 
     return img
 

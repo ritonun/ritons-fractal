@@ -13,7 +13,7 @@ class Loading:
         self.period = 3
         self.do_reset = False
 
-    def show_loading_msg(self, current_value, max_value):
+    def show_loading_msg(self, current_value, max_value, custom_msg=""):
         if self.do_reset:
             self.reset(max_value)
 
@@ -27,7 +27,7 @@ class Loading:
 
         if self.pourcentage == 100:
             if self.pourcentage not in self.pourcentage_showed:
-                print("-- Loading Done! ---")
+                print(custom_msg, "Loading 100%")
                 self.pourcentage_showed.append(self.pourcentage)
             else:
                 return
@@ -38,4 +38,4 @@ class Loading:
             if self.pourcentage not in self.pourcentage_showed:
                 self.last_showing_msg = time.time()
                 self.pourcentage_showed.append(self.pourcentage)
-                print("Loading {}%".format(self.pourcentage))
+                print(custom_msg, "Loading {}%".format(self.pourcentage))

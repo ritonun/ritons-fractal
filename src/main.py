@@ -5,7 +5,7 @@ from configuration import Config
 
 
 def main():
-    im = render_image(show_loading=False)
+    im = render_image(show_loading=True)
     save_image(im)
 
 
@@ -13,6 +13,9 @@ if __name__ == "__main__":
     time_math.start_running_time()
     config = Config()
     config.write_default_settings()
-    anim(3, main, new_re_start=-0.35, new_re_end=-0.08, new_im_start=-0.775, 
+    config.modify_settings("fractal", "max_iter", 80)
+    config.modify_settings("display", "width", 1500)
+    config.modify_settings("display", "height", 1000)
+    anim(50, main, new_re_start=-0.35, new_re_end=-0.08, new_im_start=-0.775, 
          new_im_end=-0.605)
     time_math.show_running_time()
