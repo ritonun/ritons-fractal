@@ -72,6 +72,8 @@ class Render:
         
         Args:
             img (PIL Image): Image
+            index (int): Number of image process. Number is added at the end
+            of the file name to avoid overwriting existing img.
         """
         totalFile = 0
         for base, dirs, files in os.walk(cs.DEFAULT_PATH):
@@ -82,7 +84,7 @@ class Render:
         filename = cs.DEFAULT_PATH + "/"
         filename += generate_name("fractal")
         filename += "(" + str(totalFile) + ")" + ".png"
-        
+
         img.save(filename)
         print("Saved in {}".format(filename))
 
@@ -120,11 +122,11 @@ class Render:
                 if key == "re_start":
                     config.modify_settings("fractal", "re_start", cs.RE_START - incrementation['re_start'])
                 if key == "re_end":
-                    config.modify_settings("fractal", "re_start", cs.RE_START - incrementation['re_start'])
+                    config.modify_settings("fractal", "re_end", cs.RE_END - incrementation['re_end'])
                 if key == "im_start":
-                    config.modify_settings("fractal", "re_start", cs.RE_START - incrementation['re_start'])
+                    config.modify_settings("fractal", "im_start", cs.IM_START - incrementation['im_start'])
                 if key == "im_end":
-                    config.modify_settings("fractal", "re_start", cs.RE_START - incrementation['re_start'])
+                    config.modify_settings("fractal", "im_end", cs.IM_END - incrementation['im_end'])
 
             reload_settings()
             loading.show_loading_msg(i, iteration, custom_msg="Animation:")
