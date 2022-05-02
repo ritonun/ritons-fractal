@@ -43,6 +43,9 @@ class Render:
         self.list_image.append(img)
         return img
 
+    def show_image_list(self):
+        self.list_image[0].show()
+
     def reset_image_list(self):
         """Reset self.list_image[] 
         """
@@ -117,3 +120,4 @@ class Render:
             loading.show_loading_msg(i, iteration, custom_msg="Animation:")
             self.image()
         self.save_image_list()
+        self.show_image_list()
