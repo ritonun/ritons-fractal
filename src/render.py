@@ -61,7 +61,12 @@ class Render:
     def save_image_list(self):
         """Save all image of self.list_image[]
         """
-        index = 0
+        totalFile = 0
+        for base, dirs, files in os.walk(cs.DEFAULT_PATH):
+            for Files in files:
+                totalFile += 1
+        index = totalFile
+
         for i in self.list_image:
             self.save_image(i, index)
             index += 1
@@ -75,15 +80,10 @@ class Render:
             index (int): Number of image process. Number is added at the end
             of the file name to avoid overwriting existing img.
         """
-        totalFile = 0
-        for base, dirs, files in os.walk(cs.DEFAULT_PATH):
-            for Files in files:
-                totalFile += 1
-        totalFile += index
 
         filename = cs.DEFAULT_PATH + "/"
         filename += generate_name("fractal")
-        filename += "(" + str(totalFile) + ")" + ".png"
+        filename += "(" + str(index) + ")" + ".png"
 
         img.save(filename)
         print("Saved in {}".format(filename))
