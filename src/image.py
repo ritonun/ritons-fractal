@@ -7,6 +7,10 @@ import datetime
 
 
 def render_image(show_loading=True):
+    """
+    Create an image pixel by pixel based on settings value. 
+    show_loading will print to user advancment in % of the image creation.
+    """
     loading = Loading()
     reload_settings()
     img = Image.new('RGB', (cs.WIDTH, cs.HEIGHT), (0, 0, 0))
@@ -28,6 +32,7 @@ def render_image(show_loading=True):
 
 
 def save_image(img, path="../res_dev/output/"):
+    """ Save the image into the specified path with a auto-generated name """
     suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
     name = path + "mdb" 
     filename = "_".join([name, suffix])
