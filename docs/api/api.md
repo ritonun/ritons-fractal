@@ -1,6 +1,17 @@
 API
 ===========
 
+# Utils
+## Loading
+::: src.utils.Loading
+## TimeMath
+::: src.utils.TimeMath
+
+::: src.main
+
+
+
+
 # Fractal math
 ## Mandelbrot set
 
