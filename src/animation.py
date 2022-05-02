@@ -5,14 +5,15 @@ from utils import Loading
 
 def anim(iteration, func, new_re_start=None, new_re_end=None, 
          new_im_start=None, new_im_end=None):
-    ''' Take new re and im value, and create x image that progressively zoom 
-    in, so you can create a gif/video by combining all image '''
+    """
+    Take  argument for value of re and im. It will generate iteration amount of
+    image that progressively zoom in. Can be coupled to a script to generate 
+    gif/video.
+    """
     loading = Loading()
     reload_settings()
     config = Config()
-    incrementation = {}
-    # incrementation value is calculated before the loop as it is consistent
-    # incrementation = (Initial value - new value we want to get to) / number of iteration
+    incrementation = {}  # incrementation value is calculated before the loop as it is consistent
     if new_re_start is not None:
         incrementation['re_start'] = (cs.RE_START - new_re_start) / iteration
     if new_re_end is not None:
