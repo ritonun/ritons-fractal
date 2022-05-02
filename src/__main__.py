@@ -1,6 +1,4 @@
 from utils import time_math
-from image import render_image, save_image
-from animation import anim
 from configuration import Config
 from render import Render
 import os
@@ -16,21 +14,17 @@ def load():
 
 
 def main():
-    im = render_image(show_loading=True)
-    save_image(im)
+    render = Render()
+    render.batch_rendering(5, re_start=-0.5, re_end=1, im_start=-0.75, im_end=0.75)
 
 
 if __name__ == "__main__":
     load()
-    '''
     time_math.start_running_time()
     config = Config()
     config.write_default_settings()
-    render = Render()
-    render.image()
-    render.save_image(render.list_image[0])
+    main()
     time_math.show_running_time()
-    '''
 
     '''
     config.modify_settings("fractal", "max_iter", 80)

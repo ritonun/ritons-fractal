@@ -1,9 +1,10 @@
 from PIL import Image, ImageDraw
 import configuration.settings as cs
-from configuration import reload_settings
+from configuration import reload_settings, Config
 from fractal_math import mandelbrot
 from utils import Loading
 import datetime
+import os
 
 
 class Render:
@@ -54,15 +55,65 @@ class Render:
             self.save_image(i)
 
     def save_image(self, img, path="../res_dev/output/"):
-        """Save the image into the specified path with a auto-generated name 
+        """Save the image into the specified path with a auto-generated name.
+        Naming make sure that no file are overwritten.
         
         Args:
             img (PIL Image): Image
             path (str, optional): Output path where the image will be located
         """
+        totalFile = 0
+        for base, dirs, files in os.walk(path):
+            for Files in files:
+                totalFile += 1
         suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
         name = path + "mdb" 
         filename = "_".join([name, suffix])
-        filename += ".png"
+        filename += "(" + str(totalFile) + ")" + ".png"
         img.save(filename)
         print("saved in {}".format(filename))
+
+    def batch_rendering(self, iteration, **kwargs):
+        """Render iteration number of image. the **kwargs value specify new 
+        value for RE_START, RE_END, IM_START and IM_END. It will create each 
+        image with a zoom/dezoom until it reach the new value. All the image 
+        can then be combine into a gif or video.
+        
+        Args:
+            iteration (int): number of image created. The higher the number, 
+                             the smoother the animation will be.
+            **kwargs: 4 value possible: re_start, re_end, im_start, im_end. 
+                      Enter the final value we want to zoom/dezoom to.
+        """
+        loading = Loading()
+        reload_settings()
+        config = Config()
+
+        incrementation = {}
+        for key in kwargs:
+            if key == "re_start":
+                incrementation['re_start'] = (cs.RE_START - kwargs[key]) / iteration
+            elif key == "re_end":
+                incrementation['re_end'] = (cs.RE_END - kwargs[key]) / iteration
+            elif key == "im_start":
+                incrementation['im_start'] = (cs.IM_START - kwargs[key]) / iteration
+            elif key == "im_end":
+                incrementation['im_end'] = (cs.IM_END - kwargs[key]) / iteration
+            else:
+                raise Exception("Name of variable for **kwargs in render.batch_render is not possible")  
+
+        for i in range(0, iteration):
+            for key in kwargs:
+                if key == "re_start":
+                    config.modify_settings("fractal", "re_start", cs.RE_START - incrementation['re_start'])
+                if key == "re_end":
+                    config.modify_settings("fractal", "re_start", cs.RE_START - incrementation['re_start'])
+                if key == "im_start":
+                    config.modify_settings("fractal", "re_start", cs.RE_START - incrementation['re_start'])
+                if key == "im_end":
+                    config.modify_settings("fractal", "re_start", cs.RE_START - incrementation['re_start'])
+
+            reload_settings()
+            loading.show_loading_msg(i, iteration, custom_msg="Animation:")
+            self.image()
+        self.save_image_list()
