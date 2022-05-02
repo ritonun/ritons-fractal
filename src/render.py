@@ -57,20 +57,19 @@ class Render:
         for i in self.list_image:
             self.save_image(i)
 
-    def save_image(self, img, path="../res_dev/output/"):
-        """Save the image into the specified path with a auto-generated name.
+    def save_image(self, img):
+        """Save the image into the default path with a auto-generated name.
         Naming make sure that no file are overwritten.
         
         Args:
             img (PIL Image): Image
-            path (str, optional): Output path where the image will be located
         """
         totalFile = 0
-        for base, dirs, files in os.walk(path):
+        for base, dirs, files in os.walk(cs.DEFAULT_PATH):
             for Files in files:
                 totalFile += 1
         suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
-        name = path + "mdb" 
+        name = cs.DEFAULT_PATH + "mdb" 
         filename = "_".join([name, suffix])
         filename += "(" + str(totalFile) + ")" + ".png"
         img.save(filename)

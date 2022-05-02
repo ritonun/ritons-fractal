@@ -20,6 +20,13 @@ def get_float_value(section, key):
     return value
 
 
+def get_str_value(section, key):
+    conf = Config()
+    config = conf.read_settings()
+    value = config[section][key]
+    return value
+
+
 # Display
 WIDTH = get_int_value("display", "width")
 HEIGHT = get_int_value("display", "height")
@@ -32,3 +39,6 @@ RE_END = get_float_value("fractal", "re_end")
 IM_START = get_float_value("fractal", "im_start")
 IM_END = get_float_value("fractal", "im_end")
 MAX_ITER = get_int_value("fractal", "max_iter")
+
+# User
+DEFAULT_PATH = get_str_value("user", "default_path")

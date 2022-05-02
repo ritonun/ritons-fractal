@@ -39,6 +39,10 @@ class Config:
             "im_end": 1
         }
 
+        config['user'] = {
+            "default_path": "../output"
+        }
+
         with open(self.filepath, "w") as configfile:
             config.write(configfile)
         self.config = config
