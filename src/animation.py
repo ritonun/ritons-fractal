@@ -11,6 +11,8 @@ def anim(iteration, func, new_re_start=None, new_re_end=None,
     reload_settings()
     config = Config()
     incrementation = {}
+    # incrementation value is calculated before the loop as it is consistent
+    # incrementation = (Initial value - new value we want to get to) / number of iteration
     if new_re_start is not None:
         incrementation['re_start'] = (cs.RE_START - new_re_start) / iteration
     if new_re_end is not None:
