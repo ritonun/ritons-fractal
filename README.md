@@ -7,32 +7,33 @@ Fractal App is a simple app to view and play with 2D fractal, as of now only the
 - Render high-quality fractal image in white & black
 - Render batch of image with zoom/dezoom
 
-# Work in progress
-v0.2.0: Batch render of image  
-v0.2.1: Upgrade of batch rendering with better input  
-v0.2.2: script to convert batch image folder into high-quality video format (.gif, .mp4, etc...)  
-
 # Features to come (maybe, no guarantee)
+## App features
 - color parameters to generate nice looking fractal
 - counter on wich iteration we are of the animation, so we can pause it, kill the program and when prgm restarted, continue generate image from the iteration count (useful for very long processing of image)
 - script to create gif incorporated into app
-- custom output path variable in settings
 - viewer (with pygame?) for coordinate, zoom
 - optimisation
+## Dev features
 - logging (instead of debuggin with print)
 - executables
 - test units (proper one with a library)
 - documentation (with mkdocs)
+
+# Work in progress
+v0.2.0: Batch render of image  
+v0.2.1: Upgrade of batch rendering with better input  
+v0.2.2: script to convert batch image folder into high-quality video format (.gif, .mp4, etc...)  
 
 # Roadmap
 v0.1.0: Image creation and view  
 v0.2.0: Batch image processing to create gif/video  
 v0.3.0: Image viewer and interact with image live (zoom, rotation?)  
 
-v1.0.0: Minimal GUI application handling all tha app  
+v1.0.0: Minimal GUI application handling all the app  
 
 # Changelog
-Current version: v0.2.0  
+Current version: v0.2.1  
 
 # Run program
 In order to run the program, please install all the module required.  
