@@ -24,6 +24,7 @@ def get_str_value(section, key):
     conf = Config()
     config = conf.read_settings()
     value = config[section][key]
+    value = str(value)
     return value
 
 
