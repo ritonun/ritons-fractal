@@ -7,10 +7,6 @@ API
 ## TimeMath
 ::: src.utils.TimeMath
 
-::: src.main
-
-
-
 
 # Fractal math
 ## Mandelbrot set
