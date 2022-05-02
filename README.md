@@ -8,7 +8,9 @@ Fractal App is a simple app to view and play with 2D fractal, as of now only the
 - Render batch of image with zoom/dezoom
 
 # Work in progress
-v.0.2.0: Batch render of image and script to convert it into high-quality video format (.gif, .mp4, etc...)  
+v0.2.0: Batch render of image  
+v0.2.1: Upgrade of batch rendering with better input
+v0.2.2: script to convert batch image folder into high-quality video format (.gif, .mp4, etc...)  
 
 # Features to come (maybe, no guarantee)
 - color parameters to generate nice looking fractal
