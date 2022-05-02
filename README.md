@@ -30,7 +30,10 @@ v0.1.0: Image creation and view
 v0.2.0: Batch image processing to create gif/video  
 v0.3.0: Image viewer and interact with image live (zoom, rotation?)  
 
+v1.0.0: Minimal GUI application handling all tha app  
+
 # Changelog
+Current version: v0.2.0  
 
 # Docs
 Documentation is build with MKdocs. All the `.mk` file are in the `docs/` folder. You can view them nicely by placing yourself in the project folder and entering the command `mkdocs serve`. Then enter in your browser the custom adress showed (something like `http://127.0.0.1:8000`). If you prefer, you can build the site instead of creating a server with the command `mkdocs build`. In the `site/` folder it will create, open `index.html`.  
