@@ -1,2 +1,8 @@
-from configuration.settings import *
-from configuration.parameters import Config
+from .settings import *
+from .parameters import Config
+import configuration.settings as cs
+import importlib
+
+
+def reload_settings():
+    importlib.reload(cs)

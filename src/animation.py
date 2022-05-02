@@ -1,5 +1,4 @@
-import importlib
-from configuration import Config
+from configuration import Config, reload_settings
 import configuration.settings as cs
 from utils import Loading
 
@@ -7,7 +6,7 @@ from utils import Loading
 def anim(iteration, func, new_re_start=None, new_re_end=None, 
          new_im_start=None, new_im_end=None):
     loading = Loading()
-    importlib.reload(cs)
+    reload_settings()
     config = Config()
     incrementation = {}
     if new_re_start is not None:
@@ -28,16 +27,6 @@ def anim(iteration, func, new_re_start=None, new_re_end=None,
         if new_im_end is not None:
             config.modify_settings("fractal", "im_end", cs.IM_END - incrementation['im_end'])
 
-        importlib.reload(cs)
+        reload_settings()
         func()
         loading.show_loading_msg(i, iteration, custom_msg="Animation: ")
-
-
-def test():
-    config = Config()
-    config.write_default_settings()
-    importlib.reload(cs)
-    print(cs.RE_START)
-    config.modify_settings("fractal", "re_start", 3)
-    importlib.reload(cs)
-    print(cs.RE_START)
