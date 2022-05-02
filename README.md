@@ -38,6 +38,7 @@ Documentation is build with MKdocs. All the `.mk` file are in the `docs/` folder
 # Dev links
 *documentation:*  
 https://docs.readthedocs.io/en/latest/intro/import-guide.html  
+https://docs.python-guide.org/writing/documentation/  
 *project structure:*  
 https://docs.python-guide.org/writing/structure/  
 *color:*  
