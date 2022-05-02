@@ -1,3 +1,5 @@
+""" Math formula for fractal """
+
 
 def mandelbrot(c, max_iter):
     """Calculate wether a number is part of the mandelbrot set or not.

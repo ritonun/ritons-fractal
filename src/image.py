@@ -1,3 +1,4 @@
+""" Handle image manipulation (creation, saving) """
 from PIL import Image, ImageDraw
 import configuration.settings as cs
 from configuration import reload_settings

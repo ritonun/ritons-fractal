@@ -2,12 +2,25 @@ import time
 
 
 class Loading:
-    """ Handle loading bar with text msg to user """
+    """Handle loading bar with text msg to user 
+    
+    Attributes:
+        do_reset (bool): Reset loading bar to 0%
+        last_showing_msg (float): last time in seconds a loading msg was showed to user
+        max_value (int): max_value possible for number of iteration
+        period (int): Period of time between two msg to user
+        pourcentage (int): Total advancement of the task
+        pourcentage_showed (list): List that keep all value showed to user
+    """
     def __init__(self):
         self.do_reset = True
 
     def reset(self, max_value):
-        """ Reset the loading to zero """
+        """Reset the loading to zero 
+        
+        Args:
+            max_value (int): max_value possible for number of iteration
+        """
         self.max_value = max_value
         self.pourcentage = 0
         self.pourcentage_showed = []
@@ -20,6 +33,11 @@ class Loading:
         Show progress of task to user in %.
         current_value is the current_value of iteration in the loop.
         max_value is the maximum number of iteration it will go through.
+        
+        Args:
+            current_value (int): current value of loop iteration
+            max_value (int): max_value possible for number of iteration
+            custom_msg (str, optional): Start the loading msg with a custom msg
         """
         if self.do_reset:
             self.reset(max_value)
