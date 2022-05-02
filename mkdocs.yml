@@ -9,4 +9,8 @@ nav:
   - About: 
     - License: about/license.md
     - About: about/about.md
-theme: readthedocs
+theme: 
+  name: "material"
+plugins:
+- search
+- mkdocstrings
