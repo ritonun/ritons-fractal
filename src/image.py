@@ -10,6 +10,13 @@ def render_image(show_loading=True):
     """
     Create an image pixel by pixel based on settings value. 
     show_loading will print to user advancment in % of the image creation.
+    
+    Args:
+        show_loading (bool, optional): Show user advancement in % of the 
+        rendering
+    
+    Returns:
+        PIL Image: Image of the mandlebrot set with specified parameters
     """
     loading = Loading()
     reload_settings()
@@ -32,7 +39,12 @@ def render_image(show_loading=True):
 
 
 def save_image(img, path="../res_dev/output/"):
-    """ Save the image into the specified path with a auto-generated name """
+    """Save the image into the specified path with a auto-generated name 
+    
+    Args:
+        img (PIL Image): Image
+        path (str, optional): Output path where the image will be located
+    """
     suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
     name = path + "mdb" 
     filename = "_".join([name, suffix])

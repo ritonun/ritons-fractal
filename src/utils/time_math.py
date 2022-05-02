@@ -2,12 +2,23 @@ import time
 
 
 class TimeMath:
-    """ Class that handle time of execution"""
+    """Class that handle time of execution
+    
+    Attributes:
+        start_time (float): current time in seconds
+    """
     def __init__(self):
         self.start_time = time.time()
 
     def convert_seconds_into_time(self, time):
-        """ convert a time.time() into hours, minutes, seconds """
+        """convert a time.time() into hours, minutes, seconds 
+        
+        Args:
+            time (float): time in seconds
+        
+        Returns:
+            int, int, int: hours, minutes, seconds
+        """
         seconds = 0 
         minutes = 0
         hours = 0
@@ -21,13 +32,20 @@ class TimeMath:
         return hours, minutes, seconds
 
     def start_running_time(self):
-        """ reset/start the timer """
+        """reset/start the timer 
+        """
         self.start_time = time.time()
 
     def show_running_time(self, reset=False):
         """
         Print to user the execution time.
         reset will reset the timer.
+        
+        Args:
+            reset (bool, optional): reset the timer to 0
+        
+        Returns:
+            float: return time of execution
         """
         end_time = time.time() - self.start_time
         h, m, s = self.convert_seconds_into_time(end_time)

@@ -9,6 +9,14 @@ def anim(iteration, func, new_re_start=None, new_re_end=None,
     Take  argument for value of re and im. It will generate iteration amount of
     image that progressively zoom in. Can be coupled to a script to generate 
     gif/video.
+    
+    Args:
+        iteration (int): Number of image created
+        func (Function): Function called to create the image each loop 
+        new_re_start (int, optional): new re_start value
+        new_re_end (int, optional): new re_end value
+        new_im_start (int, optional): new im_start value
+        new_im_end (int, optional): new im_end value
     """
     loading = Loading()
     reload_settings()
