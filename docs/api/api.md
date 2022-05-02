@@ -8,8 +8,12 @@ API
 ## render_image()
 Create an image pixel by pixel and return it based on the mandelbrot_set
 
+## save_image(img, path="")
+Save an image into the path specified. There is a default path if not specified.
+
 # Animation
-## anim()
+## anim(iteration, new re & im value)
+Create iteration number of image that zoom or dezoom toward the new re & im value specified.
 
 # Configuration
 ## Config()
