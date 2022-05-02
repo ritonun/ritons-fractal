@@ -3,6 +3,7 @@ from .parameters import Config
 
 
 def get_int_value(section, key):
+    """ Transform config value into a int """
     conf = Config()
     config = conf.read_settings()
     value = config[section][key]
@@ -11,6 +12,7 @@ def get_int_value(section, key):
 
 
 def get_float_value(section, key):
+    """ Transform config value into a float """
     conf = Config()
     config = conf.read_settings()
     value = config[section][key]

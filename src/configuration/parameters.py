@@ -9,6 +9,8 @@ class Config:
         self.config = self.read_settings(self.filepath)
 
     def write_default_settings(self):
+        """ This are the default parameters of the app. By calling this
+        function, settings are basically reset to default """
         config = configparser.ConfigParser()
         config['display'] = {
             "width": 600,
@@ -28,6 +30,7 @@ class Config:
         self.config = config
 
     def read_settings(self, filepath=None):
+        """ Read settings from the settings.ini file """
         if filepath is None:
             path = self.filepath
         else:
@@ -36,7 +39,11 @@ class Config:
         config.read(path)
         return config
 
-    def modify_settings(self, section, data, number, show_succes=False):  # noqa: E501
+    def modify_settings(self, section, data, number, show_succes=False):
+        """
+        Modify a settings in the setting.ini file. In order to actualise the 
+        program with this value, settings.py need to be reload 
+        """
         config = configparser.ConfigParser()
         config.read(self.filepath)
         config.set(section, data, str(number))
