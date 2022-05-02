@@ -7,6 +7,13 @@ import datetime
 import os
 
 
+def generate_name(name):
+    name += "_"
+    name += datetime.datetime.now().strftime("%y%m%d_%H%M%S")
+    name += "_"
+    return name
+
+
 class Render:
     def __init__(self):
         self.list_image = []
@@ -54,10 +61,12 @@ class Render:
     def save_image_list(self):
         """Save all image of self.list_image[]
         """
+        index = 0
         for i in self.list_image:
-            self.save_image(i)
+            self.save_image(i, index)
+            index += 1
 
-    def save_image(self, img):
+    def save_image(self, img, index):
         """Save the image into the default path with a auto-generated name.
         Naming make sure that no file are overwritten.
         
@@ -68,12 +77,14 @@ class Render:
         for base, dirs, files in os.walk(cs.DEFAULT_PATH):
             for Files in files:
                 totalFile += 1
-        suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
-        name = cs.DEFAULT_PATH + "mdb" 
-        filename = "_".join([name, suffix])
+        totalFile += index
+
+        filename = cs.DEFAULT_PATH + "/"
+        filename += generate_name("fractal")
         filename += "(" + str(totalFile) + ")" + ".png"
+        
         img.save(filename)
-        print("saved in {}".format(filename))
+        print("Saved in {}".format(filename))
 
     def batch_rendering(self, iteration, **kwargs):
         """Render iteration number of image. the **kwargs value specify new 
@@ -119,4 +130,3 @@ class Render:
             loading.show_loading_msg(i, iteration, custom_msg="Animation:")
             self.image()
         self.save_image_list()
-        self.show_image_list()

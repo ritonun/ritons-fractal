@@ -1,5 +1,5 @@
 from utils import time_math
-from configuration import Config
+from configuration import Config, reload_settings
 from render import Render
 import os
 
@@ -23,6 +23,7 @@ if __name__ == "__main__":
     time_math.start_running_time()
     config = Config()
     config.write_default_settings()
+    reload_settings()
     main()
     time_math.show_running_time()
 
