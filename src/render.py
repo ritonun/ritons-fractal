@@ -23,6 +23,13 @@ def generate_name(name):
 
 
 class Render:
+
+    """handle Image and batch image rendering.
+    
+    Attributes:
+        list_image (list): Contains all image created by batch_rendering()
+    """
+    
     def __init__(self):
         self.list_image = []
 
