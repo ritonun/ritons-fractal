@@ -61,17 +61,15 @@ class Render:
     def save_image_list(self):
         """Save all image of self.list_image[]
         """
-        totalFile = 0
-        for base, dirs, files in os.walk(cs.DEFAULT_PATH):
-            for Files in files:
-                totalFile += 1
-        index = totalFile
-
+        index = 0
+        folder_name = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
+        path_folder = cs.DEFAULT_PATH + "/" + folder_name
+        os.mkdir(path_folder)
         for i in self.list_image:
-            self.save_image(i, index)
+            self.save_image(i, index=index, folder_name=folder_name)
             index += 1
 
-    def save_image(self, img, index):
+    def save_image(self, img, index=None, folder_name=""):
         """Save the image into the default path with a auto-generated name.
         Naming make sure that no file are overwritten.
         
@@ -82,8 +80,12 @@ class Render:
         """
 
         filename = cs.DEFAULT_PATH + "/"
+        if folder_name != "":
+            filename += folder_name + "/"
         filename += generate_name("fractal")
-        filename += "(" + str(index) + ")" + ".png"
+        if index is not None:
+            filename += "(" + str(index) + ")"
+        filename += ".png"
 
         img.save(filename)
         print("Saved in {}".format(filename))
