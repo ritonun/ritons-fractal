@@ -8,6 +8,14 @@ import os
 
 
 def generate_name(name):
+    """Generate a custom name based on datetime
+    
+    Args:
+        name (str): Custom name str will begin with
+    
+    Returns:
+        str: return str with: name_YEARMONTHDAY_HOURMINUTESSECONDS_
+    """
     name += "_"
     name += datetime.datetime.now().strftime("%y%m%d_%H%M%S")
     name += "_"
@@ -76,6 +84,7 @@ class Render:
         Args:
             img (PIL Image): Image
             index (int): Number of image process. Number is added at the end
+            folder_name (str, optional): Folder output name, only use for batch saving file.
             of the file name to avoid overwriting existing img.
         """
 
@@ -101,6 +110,9 @@ class Render:
                              the smoother the animation will be.
             **kwargs: 4 value possible: re_start, re_end, im_start, im_end. 
                       Enter the final value we want to zoom/dezoom to.
+        
+        Raises:
+            Exception: Raise error if one of the kwargs is not what is expected.
         """
         loading = Loading()
         reload_settings()
