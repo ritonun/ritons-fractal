@@ -27,7 +27,8 @@ v0.2.2: script to convert batch image folder into high-quality video format (.gi
 
 # Roadmap
 v0.1.0: Image creation and view  
-v0.2.0: Batch image processing to create gif/video  
+v0.2.0: Batch image processing 
+v0.2.5: Script to convert batch image folder into high quality gif/videos  
 v0.3.0: Image viewer and interact with image live (zoom, rotation?)  
 
 v1.0.0: Minimal GUI application handling all the app  
