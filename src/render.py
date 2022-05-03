@@ -5,7 +5,7 @@ from fractal_math import mandelbrot
 from utils import Loading
 import datetime
 import os
-import moviepy.video.io.ImageSequenceClip
+import moviepy.editor as moviepy
 
 
 def generate_name(name):
@@ -103,7 +103,11 @@ class Render:
             filename += folder_name + "/"
         filename += generate_name("fractal")
         if index is not None:
-            filename += "(" + str(index) + ")"
+            if index < 10:
+                str_index = "0" + str(index)
+            else:
+                str_index = str(index)
+            filename += "(" + str_index + ")"
         filename += ".png"
 
         img.save(filename)
@@ -157,11 +161,17 @@ class Render:
             self.image()
 
     def render_video(self, fps, path):
+        """From an output folder conatining .png, create a .mp4 video.
+        
+        Args:
+            fps (int): Fps of the video generated.
+            path (str): Path of the folder containing the images.
+        """
         image_folder = path
         fps = fps
         output_folder_name = "../output/" + generate_name("video") + ".mp4"
 
         images_files = [os.path.join(image_folder, img) for img in os.listdir(image_folder) if img.endswith(".png")]
-        images_files = sorted(images_files)
-        clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(images_files, fps=fps)
+        # images_files = sorted(images_files)
+        clip = moviepy.ImageSequenceClip(images_files, fps=fps)
         clip.write_videofile(output_folder_name)

@@ -17,6 +17,7 @@ def main():
     render = Render()
     render.batch_rendering(15, re_start=-0.5, re_end=0.5, im_start=-0.75, im_end=0.75)
     path = render.save_image_list()
+    # path = "../output/220503_181943"
     render.render_video(5, path)
 
 
