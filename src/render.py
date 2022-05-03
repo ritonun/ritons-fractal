@@ -24,7 +24,7 @@ def generate_name(name):
 
 class Render:
 
-    """handle Image and batch image rendering.
+    """Handle image rendering and batch image rendering.
     
     Attributes:
         list_image (list): Contains all image created by batch_rendering()
