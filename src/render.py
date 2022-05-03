@@ -5,6 +5,7 @@ from fractal_math import mandelbrot
 from utils import Loading
 import datetime
 import os
+import moviepy.video.io.ImageSequenceClip
 
 
 def generate_name(name):
@@ -80,9 +81,11 @@ class Render:
         folder_name = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
         path_folder = cs.DEFAULT_PATH + "/" + folder_name
         os.mkdir(path_folder)
+        print(path_folder)
         for i in self.list_image:
             self.save_image(i, index=index, folder_name=folder_name)
             index += 1
+        return path_folder
 
     def save_image(self, img, index=None, folder_name=""):
         """Save the image into the default path with a auto-generated name.
@@ -152,4 +155,13 @@ class Render:
             reload_settings()
             loading.show_loading_msg(i, iteration, custom_msg="Animation:")
             self.image()
-        self.save_image_list()
+
+    def render_video(self, fps, path):
+        image_folder = path
+        fps = fps
+        output_folder_name = "../output/" + generate_name("video") + ".mp4"
+
+        images_files = [os.path.join(image_folder, img) for img in os.listdir(image_folder) if img.endswith(".png")]
+        images_files = sorted(images_files)
+        clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(images_files, fps=fps)
+        clip.write_videofile(output_folder_name)
