@@ -160,16 +160,17 @@ class Render:
             loading.show_loading_msg(i, iteration, custom_msg="Animation:")
             self.image()
 
-    def render_video(self, fps, path):
+    def render_video(self, path, fps=30, custom_name=""):
         """From an output folder conatining .png, create a .mp4 video.
         
         Args:
-            fps (int): Fps of the video generated.
             path (str): Path of the folder containing the images.
+            fps (int): Fps of the video generated. Default is 30, recommended settings.
+            custom_name (str, optional): custom file name added.
         """
         image_folder = path
         fps = fps
-        output_folder_name = "../output/" + generate_name("video") + ".mp4"
+        output_folder_name = "../output/" + generate_name("video") + "_" + custom_name + ".mp4"
 
         images_files = [os.path.join(image_folder, img) for img in os.listdir(image_folder) if img.endswith(".png")]
         # images_files = sorted(images_files)
