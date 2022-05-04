@@ -21,6 +21,7 @@ Fractal App is a simple app to view and play with 2D fractal, as of now only the
 - documentation (with mkdocs)
 
 # Work in progress
+v0.3.0: Quality of life imporvement, back-end changes, optimisation  
 v0.2.5: script to convert batch image folder into high-quality video format (.gif, .mp4, etc...)  
 v0.2.1: Upgrade of batch rendering with better input  
 v0.2.0: Batch render of image   
@@ -29,7 +30,8 @@ v0.2.0: Batch render of image
 v0.1.0: Image creation and view  
 v0.2.0: Batch image processing 
 v0.2.5: Script to convert batch image folder into high quality gif/videos  
-v0.3.0: Image viewer and interact with image live (zoom, rotation?)  
+v0.3.0: quality of life imporvement, optimisation  
+v0.4.0: Image viewer and interact with image live (zoom, rotation?)  
 
 v1.0.0: Minimal GUI application handling all the app  
 
