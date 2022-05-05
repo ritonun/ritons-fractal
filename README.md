@@ -47,6 +47,8 @@ Then run `main.py` int the `src/` folder.
 Documentation is build with MKdocs. All the `.mk` file are in the `docs/` folder. You can view them nicely by placing yourself in the project folder and entering the command `mkdocs serve`. Then enter in your browser the custom adress showed (something like `http://127.0.0.1:8000`). If you prefer, you can build the site instead of creating a server with the command `mkdocs build`. In the `site/` folder it will create, open `index.html`.  
 
 # Dev links
+*OOP tkinter*  
+https://python-textbok.readthedocs.io/en/1.0/Introduction_to_GUI_Programming.html  
 *documentation:*  
 https://docs.readthedocs.io/en/latest/intro/import-guide.html  
 https://docs.python-guide.org/writing/documentation/  
